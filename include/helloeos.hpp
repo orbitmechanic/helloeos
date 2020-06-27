@@ -3,10 +3,11 @@
 
 #include <eos/eosio.hpp>
 
-class HELLOEOS
+CONTRACT HELLOEOS : public eosio::contract
 {
   public:
-    void hi(eosio::name const & nm);
+    using eosio::contract::contract;
+    ACTION hi(eosio::name const & nm);
 }
 
 #endif
